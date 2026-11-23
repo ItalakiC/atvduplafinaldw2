@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicial - Livraria</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="masthead">
+        <div class="logo"><a href="index.html">📚 Livraria</a></div>
+        <button type="button" id="botaoMenu" class="botao-menu" aria-expanded="false" aria-controls="menuPrincipal" aria-label="Abrir menu">☰</button>
+        <nav id="menuPrincipal" aria-label="Principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#catalogo">Catálogo</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+                <li><a href="carrinho.html">Carrinho <span class="contador" id="contadorCarrinho">0</span></a></li>
+                <li><button type="button" id="botaoTema" class="botao-tema">🌗 Tema</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="cat-fantasia" aria-labelledby="tituloHero">
+            <div class="hero-conteudo">
+                <span class="tag">Livro do mês</span>
+                <h1 id="tituloHero">Descubra sua próxima leitura</h1>
+                <p>O Hobbit, de J.R.R. Tolkien, é o livro do mês. Use o cupom LIVRO10 e ganhe 10% em compras acima de R$ 100,00.</p>
+                <button type="button" id="botaoDestaque" class="botao-principal">Ver o livro do mês</button>
+            </div>
+        </section>
+
+        <section aria-labelledby="tituloVitrine">
+            <h2 id="tituloVitrine" class="secao-titulo">Destaques da semana</h2>
+            <div id="vitrine"></div>
+        </section>
+
+        <section id="catalogo" aria-labelledby="tituloCatalogo">
+            <h2 id="tituloCatalogo" class="secao-titulo">Catálogo</h2>
+            <div id="catalogo-header">
+                <label for="busca-nome" class="visually-hidden">Buscar por título ou autor</label>
+                <input type="search" id="busca-nome" placeholder="Buscar por título ou autor...">
+                <div class="filtros" role="group" aria-label="Filtrar por categoria">
+                    <button type="button" class="filtro ativo" data-filtro="todas">Todas</button>
+                    <button type="button" class="filtro cat-romance" data-filtro="Romance">Romance</button>
+                    <button type="button" class="filtro cat-fantasia" data-filtro="Fantasia">Fantasia</button>
+                    <button type="button" class="filtro cat-tecnicos" data-filtro="Técnicos">Técnicos</button>
+                    <button type="button" class="filtro cat-infantil" data-filtro="Infantil">Infantil</button>
+                </div>
+            </div>
+            <p class="dica">Clique em um livro para ver os detalhes.</p>
+            <div id="lista-livros" aria-live="polite"></div>
+            <p id="sem-resultado" hidden>Nenhum livro encontrado. Tente outro título, autor ou categoria.</p>
+            <div class="centro"><button type="button" id="botaoMais" class="botao-principal">Carregar mais</button></div>
+        </section>
+
+        <section id="contato" class="painel contato" aria-labelledby="tituloContato">
+            <h2 id="tituloContato">Fale com a gente</h2>
+            <p id="msgContato" role="status" hidden></p>
+            <form id="formContato" novalidate>
+                <div class="campo">
+                    <label for="contatoNome">Nome</label>
+                    <input type="text" id="contatoNome" name="nome" autocomplete="name">
+                </div>
+                <div class="campo">
+                    <label for="contatoEmail">E-mail</label>
+                    <input type="email" id="contatoEmail" name="email" autocomplete="email">
+                </div>
+                <div class="campo">
+                    <label for="contatoMensagem">Mensagem</label>
+                    <textarea id="contatoMensagem" name="mensagem" rows="4"></textarea>
+                </div>
+                <button type="submit" class="botao-principal">Enviar mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <dialog id="modalLivro" aria-labelledby="tituloLivro">
+        <button type="button" id="fecharLivro" class="fechar" aria-label="Fechar detalhes">✕</button>
+        <div id="detalheLivro"></div>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+    <footer class="rodape">
+        <p class="sobre"><strong>Sobre a Livraria:</strong> Somos uma livraria abrangente que engloba dos clássicos aos livros de tecnologia, com atendimento próximo e entrega rápida.</p>
+        <p class="contatos"><strong>Contatos:</strong></p>
+        <address>Rua das Letras, 123 - São Paulo/SP<br>italo@gmail.com | (11) 93847-5162</address>
+        <p class="copy">&copy; 2026 Livraria - Italo. Site desenvolvido para fins acadêmicos.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
